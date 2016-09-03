@@ -49,14 +49,12 @@ sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/5.6/fpm/pool.d/www.conf # 
 sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/cloudstead --output-document=/usr/bin/cloudstead
 sudo chmod 755 /usr/bin/cloudstead
 
+# Write phpinfo
+echo "<?php phpinfo();" > /home/ubuntu/workspace/index.php
+
 # Start the party!
 cloudstead restart
 
-# Are we ready?
-echo Check all services are up.
-sleep 5
-sudo service nginx status
-sudo service php5.6-fpm status
-sudo service mysql status
-sudo service postgresql status
-sudo service beanstalkd status
+clear;
+echo "Cloudstead Install Complete";
+echo "  - PHP Info: https://$C9_HOSTNAME";
