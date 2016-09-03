@@ -47,24 +47,19 @@ sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/5.6/fpm/pool.d/www.co
 sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/5.6/fpm/pool.d/www.conf # Reduce number of processes..
 
 # Install helper
-sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/homestead --output-document=/usr/bin/homestead
-sudo chmod 755 /usr/bin/homestead
+sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/cloudstead --output-document=/usr/bin/cloudstead
+sudo chmod 755 /usr/bin/cloudstead
 
 # Start the party!
-sudo service nginx start
-sudo service nginx reload
-sudo service php5.6-fpm start
-sudo service mysql start
-sudo service postgresql start
-sudo service beanstalkd start
+cloudstead restart
 
 # Are we ready?
 echo Check all services are up.
 sleep 5
 sudo service nginx status
-sudo service php5.6-fpm status
+sudo service php5fpm status
 sudo service mysql status
 sudo service postgresql status
 sudo service beanstalkd status
 
-homestead restart
+cloudstead restart

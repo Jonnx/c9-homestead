@@ -22,8 +22,8 @@ wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh
 After completing this process your environment will be also provisioned with a
 simple command to start, stop and restart the whole stack in a brief:
 
-* `homestead start` // Starts NGINX and PHP, MySQL, Postgres, Beanstalkd
-* `homestead stop`
+* `cloudstead start` // Starts NGINX and PHP, MySQL, Postgres, Beanstalkd
+* `cloudstead stop`
 
 ### Updating
 
