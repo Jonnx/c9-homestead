@@ -36,7 +36,7 @@ sudo service nginx stop
 # Listen port 80, change document root, setup indexes, configure PHP sock
 # set up the try_url thing (Drupal is not Worpress)...
 # Thankfully, I already modified this in the repo!
-sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/master/c9 --output-document=/etc/nginx/sites-available/c9
+sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/c9 --output-document=/etc/nginx/sites-available/c9
 sudo chmod 755 /etc/nginx/sites-available/c9
 sudo ln -s /etc/nginx/sites-available/c9 /etc/nginx/sites-enabled/c9
 
@@ -47,7 +47,7 @@ sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/7.0/fpm/pool.d/www.co
 sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/7.0/fpm/pool.d/www.conf # Reduce number of processes..
 
 # Install helper
-sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/master/homestead --output-document=/usr/bin/homestead
+sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/homestead --output-document=/usr/bin/homestead
 sudo chmod 755 /usr/bin/homestead
 
 # Start the party!

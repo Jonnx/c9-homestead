@@ -1,30 +1,29 @@
-# c9-lemp
+# c9-homestead: PHP 5.6
 
 This repo holds all the script, config files and commands you might want to
-use to set up a LEMP environment using NGINX and PHP-FPM instead the defaul
-Apache2 runner for PHP applications on Cloud9 workspaces.
+use to set up a laravel homestead equivalent environment on Cloud9 workspaces.
 
 ### Prerequisite
 
-Setup a c9 workspace using the Apache, PHP5 and MySQL template
+Setup a blank c9 workspace.
 
 ### Usage
 
 Run any of this commands straightaway on your c9 terminal.
 
 ``` bash
-curl -L https://raw.githubusercontent.com/GabrielGil/c9-lemp/master/install.sh | bash
+curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh | bash
 ```
 ----
 ``` bash
-wget -O - https://raw.githubusercontent.com/GabrielGil/c9-lemp/master/install.sh | bash
+wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh | bash
 ```
 
 After completing this process your environment will be also provisioned with a
 simple command to start, stop and restart the whole stack in a brief:
 
-* `lemp start` // Starts NGINX and PHP
-* `lemp stop`
+* `homestead start` // Starts NGINX and PHP, MySQL, Postgres, Beanstalkd
+* `homestead stop`
 
 ### Updating
 
