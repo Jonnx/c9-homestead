@@ -20,6 +20,9 @@ case "$1" in
         echo "Starting Postgres ..."
         sudo service postgresql start
         sleep 1
+        echo "Starting Redis ..."
+        sudo service redis-server start
+        sleep 1
         echo "Starting Beanstalkd ..."
         sudo service beanstalkd start
         sleep 1
@@ -36,6 +39,9 @@ case "$1" in
         sleep 1
         echo "Stopping Postgres ..."
         sudo service postgresql stop
+        sleep 1
+        echo "Stopping Redis ..."
+        sudo service redis-server stop
         sleep 1
         echo "Stopping Beanstalkd ..."
         sudo service beanstalkd stop
@@ -54,6 +60,9 @@ case "$1" in
         echo "Restarting Postgres ..."
         sudo service postgresql restart
         sleep 1
+        echo "Restarting Redis ..."
+        sudo service redis-server restart
+        sleep 1
         echo "Restarting Beanstalkd ..."
         sudo service beanstalkd restart
         sleep 1
@@ -63,6 +72,7 @@ case "$1" in
         sudo service php5.6-fpm status
         sudo service mysql status
         sudo service postgresql status
+        sudo service redis-server status
         sudo service beanstalkd status
         exit 0
     ;;
