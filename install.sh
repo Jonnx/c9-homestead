@@ -23,9 +23,9 @@ sudo apt-get update
 sudo apt-get purge -qq apache2 mysql-server mysql-client
 
 # Install Stack
-sudo apt-get install -qq php5.6-fpm php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-mysql php5.6-phpdbg \
+sudo apt-get -y install -qq php5.6-fpm php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-mysql php5.6-phpdbg \
 php5.6-mbstring php5.6-gd php5.6-imap php5.6-ldap php5.6-pgsql php5.6-pspell php5.6-recode php5.6-tidy php5.6-dev \
-php5.6-intl php5.6-gd php5.6-curl php5.6-zip php5.6-xml redis-server mysql-server beanstalkd postgresql postgresql-contrib
+php5.6-intl php5.6-gd php5.6-curl php5.6-zip php5.6-xml redis-server redis-cli mysql-server beanstalkd postgresql postgresql-contrib
 
 # Apache2
 sudo service apache2 stop
@@ -42,9 +42,9 @@ sudo ln -s /etc/nginx/sites-available/c9 /etc/nginx/sites-enabled/c9
 
 
 # PHP:
-sudo sed -i 's/user = www-data/user = ubuntu/g' /etc/php/7.0/fpm/pool.d/www.conf
-sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/7.0/fpm/pool.d/www.conf
-sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/7.0/fpm/pool.d/www.conf # Reduce number of processes..
+sudo sed -i 's/user = www-data/user = ubuntu/g' /etc/php/5.6/fpm/pool.d/www.conf
+sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/5.6/fpm/pool.d/www.conf
+sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/5.6/fpm/pool.d/www.conf # Reduce number of processes..
 
 # Install helper
 sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/homestead --output-document=/usr/bin/homestead
