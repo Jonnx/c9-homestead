@@ -19,13 +19,12 @@ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-add-repository ppa:rwky/redis -y
 sudo apt-get update
 
-# Remove old Installs
-sudo apt-get purge -qq apache2 mysql-server mysql-client
-
 # Install Stack
-sudo apt-get -y install -qq php5.6-fpm php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-mysql php5.6-phpdbg \
+sudo apt-get -y install php5.6 php5.6-fpm php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-mysql php5.6-phpdbg \
 php5.6-mbstring php5.6-gd php5.6-imap php5.6-ldap php5.6-pgsql php5.6-pspell php5.6-recode php5.6-tidy php5.6-dev \
 php5.6-intl php5.6-gd php5.6-curl php5.6-zip php5.6-xml redis-server redis-cli mysql-server beanstalkd postgresql postgresql-contrib
+
+sudo apt-get purge -qq apache2 mysql-server mysql-client
 
 # Apache2
 sudo service apache2 stop
@@ -57,9 +56,7 @@ cloudstead restart
 echo Check all services are up.
 sleep 5
 sudo service nginx status
-sudo service php5fpm status
+sudo service php5.6-fpm status
 sudo service mysql status
 sudo service postgresql status
 sudo service beanstalkd status
-
-cloudstead restart
