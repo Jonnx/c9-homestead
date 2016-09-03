@@ -19,8 +19,10 @@ curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh |
 wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh | bash
 ```
 
+### Cloudstead
+
 After completing this process your environment will be also provisioned with a
-simple command to start, stop and restart the whole stack in a brief:
+simple command to start, stop and restart the whole stack easily:
 
 * `cloudstead start` // Starts NGINX and PHP, MySQL, Postgres, Beanstalkd
 * `cloudstead stop`
@@ -30,10 +32,3 @@ simple command to start, stop and restart the whole stack in a brief:
 You can re-run this script as many times as you wish, just in case somting is updated.
 
 
-### Considerations
-
-This is a quite simple script. It is just an easy way to configure your environment
-to be up and running with NGINX and PHP-FPM.
-
-It does not override the default NGINX site configuration file, so you don't have to
-worry about loosing any data in case you had already modified yours.
