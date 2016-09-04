@@ -22,7 +22,7 @@ sudo apt-get update
 # Install Stack
 sudo apt-get -y install -qq php5.6 php5.6-fpm php5.6-cli php5.6-common php5.6-json php5.6-opcache php5.6-mysql php5.6-phpdbg \
 php5.6-mbstring php5.6-gd php5.6-imap php5.6-ldap php5.6-pgsql php5.6-pspell php5.6-recode php5.6-tidy php5.6-dev \
-php5.6-intl php5.6-gd php5.6-curl php5.6-zip php5.6-xml redis-server mysql-server beanstalkd postgresql postgresql-contrib
+php5.6-intl php5.6-gd php5.6-curl php5.6-zip php5.6-xml php5.6-mcrypt php5.6-sqlite redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
 sudo apt-get purge -qq apache2 mysql-server mysql-client
 
