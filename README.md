@@ -1,4 +1,4 @@
-# c9-homestead: PHP 5.6
+# c9-homestead: PHP 7.0
 
 This repo holds all the script, config files and commands you might want to
 use to set up a laravel homestead equivalent environment on Cloud9 workspaces.
