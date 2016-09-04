@@ -12,11 +12,11 @@ Setup a blank c9 workspace.
 Run any of this commands straightaway on your c9 terminal.
 
 ``` bash
-curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh | bash
+curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.0/install.sh | bash
 ```
 ----
 ``` bash
-wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php5.6/install.sh | bash
+wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.0/install.sh | bash
 ```
 
 ### Cloudstead
