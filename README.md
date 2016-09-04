@@ -1,40 +1,15 @@
-# c9-lemp
+# c9-homestead
 
-This repo holds all the script, config files and commands you might want to
-use to set up a LEMP environment using NGINX and PHP-FPM instead the defaul
-Apache2 runner for PHP applications on Cloud9 workspaces.
+This project offers a simple build script that allows you to configure
+a c9.io workspace to run a similar configuration to the Laravel Homestead environment.
 
-### Prerequisite
+## PHP 5.6 vs PHP 7.0
+To allow people to develop on the two main versions of PHP the following two branches
+will allow you to choose PHP 5.6 or 7.0. This is helpful when your project depends on
+PHP 5.6 (using SDKs from Salesforce, Quickbooks, ...)
 
-Setup a c9 workspace using the Apache, PHP5 and MySQL template
+* [https://github.com/Jonnx/c9-homestead/tree/php5.6](https://github.com/Jonnx/c9-homestead/tree/php5.6)
+* [https://github.com/Jonnx/c9-homestead/tree/php7.0](https://github.com/Jonnx/c9-homestead/tree/php7.0)
 
-### Usage
-
-Run any of this commands straightaway on your c9 terminal.
-
-``` bash
-curl -L https://raw.githubusercontent.com/GabrielGil/c9-lemp/master/install.sh | bash
-```
-----
-``` bash
-wget -O - https://raw.githubusercontent.com/GabrielGil/c9-lemp/master/install.sh | bash
-```
-
-After completing this process your environment will be also provisioned with a
-simple command to start, stop and restart the whole stack in a brief:
-
-* `lemp start` // Starts NGINX and PHP
-* `lemp stop`
-
-### Updating
-
-You can re-run this script as many times as you wish, just in case somting is updated.
-
-
-### Considerations
-
-This is a quite simple script. It is just an easy way to configure your environment
-to be up and running with NGINX and PHP-FPM.
-
-It does not override the default NGINX site configuration file, so you don't have to
-worry about loosing any data in case you had already modified yours.
+### Thanks
+Special thanks goes to GabrielGil, who did most of the heavy lifting by doing the ground work with the [c9-lemp](https://github.com/GabrielGil/c9-lemp) install script that c9-homestead is built off of. Even the utility from the c9-lemp project was ported over, adjusted and renamed to cloudstead
