@@ -14,7 +14,7 @@ fi
 # Update Composer
 sudo /usr/bin/composer self-update
 
-# Add PHP7.0 Repository
+# Add PHP PPA Repository
 LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-add-repository ppa:rwky/redis -y
 sudo apt-get update
