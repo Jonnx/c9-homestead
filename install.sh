@@ -18,18 +18,9 @@ sudo /usr/bin/composer self-update
 LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-add-repository ppa:rwky/redis -y
 
-# Add MySQL 5.7
-sudo export DEBIAN_FRONTEND=noninteractive
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-codename select trusty'
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-distro select ubuntu'
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-url string http://repo.mysql.com/apt/'
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-preview select '
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-product select Ok'
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-server select mysql-5.7'
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-tools select '
-sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/unsupported-platform select abort'
-sudo wget http://dev.mysql.com/get/mysql-apt-config_0.7.2-1_all.deb
-sudo dpkg -i mysql-apt-config_0.7.2-1_all.deb
+# UI Flow for MySQL 5.7
+wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
+sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
 
 #APT: Update
 sudo apt-get update
@@ -39,7 +30,9 @@ sudo apt-get -y --force-yes install -qq php7.1 php7.1-fpm php7.1-cli php7.1-comm
 php7.1-mbstring php7.1-gd php7.1-imap php7.1-ldap php7.1-pgsql php7.1-pspell php7.1-recode php7.1-tidy php7.1-dev \
 php7.1-intl php7.1-gd php7.1-curl php7.1-zip php7.1-xml php7.1-mcrypt php7.1-sqlite php7.1-soap redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
-sudo apt-get purge -qq apache2 mysql-server mysql-client
+# install cleanup
+sudo apt-get purge -qq apache2
+sudo rm ./mysql-apt-config_0.6.0-1_all.deb
 
 # Apache2
 sudo service apache2 stop
