@@ -19,7 +19,7 @@ LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-add-repository ppa:rwky/redis -y
 
 # Add MySQL 5.7
-export DEBIAN_FRONTEND=noninteractive
+sudo export DEBIAN_FRONTEND=noninteractive
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-codename select trusty'
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-distro select ubuntu'
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-url string http://repo.mysql.com/apt/'
@@ -28,7 +28,7 @@ sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-produc
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-server select mysql-5.7'
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-tools select '
 sudo debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/unsupported-platform select abort'
-wget http://dev.mysql.com/get/mysql-apt-config_0.7.2-1_all.deb
+sudo wget http://dev.mysql.com/get/mysql-apt-config_0.7.2-1_all.deb
 sudo dpkg -i mysql-apt-config_0.7.2-1_all.deb
 
 #APT: Update
@@ -37,7 +37,7 @@ sudo apt-get update
 # Install Stack
 sudo apt-get -y install -qq php7.1 php7.1-fpm php7.1-cli php7.1-common php7.1-json php7.1-opcache php7.1-mysql php7.1-phpdbg \
 php7.1-mbstring php7.1-gd php7.1-imap php7.1-ldap php7.1-pgsql php7.1-pspell php7.1-recode php7.1-tidy php7.1-dev \
-php7.1-intl php7.1-gd php7.1-curl php7.1-zip php7.1-xml php7.1-mcrypt php7.1-sqlite php7.1-soap redis-server mysql-server-5.7 beanstalkd postgresql postgresql-contrib
+php7.1-intl php7.1-gd php7.1-curl php7.1-zip php7.1-xml php7.1-mcrypt php7.1-sqlite php7.1-soap redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
 sudo apt-get purge -qq apache2 mysql-server mysql-client
 
