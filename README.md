@@ -10,6 +10,7 @@ PHP 5.6 (using SDKs from Salesforce, Quickbooks, ...)
 
 * [https://github.com/Jonnx/c9-homestead/tree/php5.6](https://github.com/Jonnx/c9-homestead/tree/php5.6)
 * [https://github.com/Jonnx/c9-homestead/tree/php7.0](https://github.com/Jonnx/c9-homestead/tree/php7.0)
+* [https://github.com/Jonnx/c9-homestead/tree/php7.1](https://github.com/Jonnx/c9-homestead/tree/php7.1)
 
 ### Thanks
 Special thanks goes to GabrielGil, who did most of the heavy lifting by doing the ground work with the [c9-lemp](https://github.com/GabrielGil/c9-lemp) install script that c9-homestead is built off of. Even the utility from the c9-lemp project was ported over, adjusted and renamed to cloudstead
