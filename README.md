@@ -1,4 +1,4 @@
-# c9-homestead: PHP 7.1
+# c9-homestead: PHP 7.2
 
 This repo holds all the script, config files and commands you might want to
 use to set up a laravel homestead equivalent environment on Cloud9 workspaces.
@@ -12,11 +12,11 @@ Setup a blank c9 workspace.
 Run any of this commands straightaway on your c9 terminal.
 
 ``` bash
-curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.1/install.sh | bash
+curl -L https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.2/install.sh | bash
 ```
 ----
 ``` bash
-wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.1/install.sh | bash
+wget -O - https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.2/install.sh | bash
 ```
 
 

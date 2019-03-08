@@ -26,9 +26,9 @@ sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
 sudo apt-get update
 
 # Install Stack
-sudo apt-get -y --force-yes install -qq php7.1 php7.1-fpm php7.1-cli php7.1-common php7.1-json php7.1-opcache php7.1-mysql php7.1-phpdbg \
-php7.1-mbstring php7.1-gd php7.1-imap php7.1-ldap php7.1-pgsql php7.1-pspell php7.1-recode php7.1-tidy php7.1-dev \
-php7.1-intl php7.1-gd php7.1-curl php7.1-zip php7.1-xml php7.1-mcrypt php7.1-sqlite php7.1-soap redis-server mysql-server beanstalkd postgresql postgresql-contrib
+sudo apt-get -y --force-yes install -qq php7.2 php7.2-fpm php7.2-cli php7.2-common php7.2-json php7.2-opcache php7.2-mysql php7.2-phpdbg \
+php7.2-mbstring php7.2-gd php7.2-imap php7.2-ldap php7.2-pgsql php7.2-pspell php7.2-recode php7.2-tidy php7.2-dev \
+php7.2-intl php7.2-gd php7.2-curl php7.2-zip php7.2-xml php7.2-mcrypt php7.2-sqlite php7.2-soap redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
 # install cleanup
 sudo apt-get purge -qq apache2
@@ -43,18 +43,18 @@ sudo service nginx stop
 # Listen port 80, change document root, setup indexes, configure PHP sock
 # set up the try_url thing (Drupal is not Worpress)...
 # Thankfully, I already modified this in the repo!
-sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.1/c9 --output-document=/etc/nginx/sites-available/c9
+sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.2/c9 --output-document=/etc/nginx/sites-available/c9
 sudo chmod 755 /etc/nginx/sites-available/c9
 sudo ln -s /etc/nginx/sites-available/c9 /etc/nginx/sites-enabled/c9
 
 
 # PHP:
-sudo sed -i 's/user = www-data/user = ubuntu/g' /etc/php/7.1/fpm/pool.d/www.conf
-sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/7.1/fpm/pool.d/www.conf
-sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/7.1/fpm/pool.d/www.conf # Reduce number of processes..
+sudo sed -i 's/user = www-data/user = ubuntu/g' /etc/php/7.2/fpm/pool.d/www.conf
+sudo sed -i 's/group = www-data/group = ubuntu/g' /etc/php/7.2/fpm/pool.d/www.conf
+sudo sed -i 's/pm = dynamic/pm = ondemand/g' /etc/php/7.2/fpm/pool.d/www.conf # Reduce number of processes..
 
 # Install helper
-sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.1/cloudstead --output-document=/usr/bin/cloudstead
+sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.2/cloudstead --output-document=/usr/bin/cloudstead
 sudo chmod 755 /usr/bin/cloudstead
 
 # Write phpinfo
