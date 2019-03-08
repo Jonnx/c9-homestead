@@ -26,7 +26,7 @@ sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
 sudo apt-get update
 
 # Install Stack
-sudo apt-get -y --force-yes install -qq php7.2 php7.2-fpm php7.2-cli php7.2-common php7.2-opcache php7.2-zip php7.2-dom php7.2-mbstring redis-server mysql-server beanstalkd postgresql postgresql-contrib
+sudo apt-get -y --force-yes install -qq php7.2 php7.2-fpm php7.2-cli php7.2-common php7.2-opcache php7.2-zip php7.2-dom php7.2-mbstring php7.2-curl redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
 # install cleanup
 sudo apt-get purge -qq apache2
