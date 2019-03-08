@@ -26,7 +26,7 @@ sudo dpkg -i mysql-apt-config_0.6.0-1_all.deb
 sudo apt-get update
 
 # Install Stack
-sudo apt-get -y --force-yes install -qq php7.2 php7.2-fpm php7.2-cli php7.2-common redis-server mysql-server beanstalkd postgresql postgresql-contrib
+sudo apt-get -y --force-yes install -qq php7.2 php7.2-fpm php7.2-cli php7.2-common php7.2-opcache php7.2-zip php7.2-dom php7.2-mbstring redis-server mysql-server beanstalkd postgresql postgresql-contrib
 
 # install cleanup
 sudo apt-get purge -qq apache2
@@ -45,6 +45,11 @@ sudo wget https://raw.githubusercontent.com/Jonnx/c9-homestead/php7.2/c9 --outpu
 sudo chmod 755 /etc/nginx/sites-available/c9
 sudo ln -s /etc/nginx/sites-available/c9 /etc/nginx/sites-enabled/c9
 
+# CONFIGURE COMPOSER GLOBAL
+sudo chown -R ubuntu /home/ubuntu/.composer
+sudo echo "" >> ~/.profile
+sudo echo "# COMPOSER GLOBAL" >> ~/.profile
+sudo echo "export PATH=$PATH:/home/ubuntu/.composer/vendor/bin" >> ~/.profile
 
 # PHP:
 sudo sed -i 's/user = www-data/user = ubuntu/g' /etc/php/7.2/fpm/pool.d/www.conf
